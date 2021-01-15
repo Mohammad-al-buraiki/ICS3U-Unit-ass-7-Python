@@ -2,22 +2,24 @@
 
 # Created by: Mohammad-al-buraiki
 # Created on January 2021
-# This program is to find the largest number
+# This program is to claculate the total of 
+# items prices plus tax
 
 
 def calculation(food_item, food_cost):
     # here is the calculation
     total = 0
-    for loop_counter in range(0, len(food_item)):
+    for loop_counter in range (len(food_item)):
         item = food_item[loop_counter]
         price = food_cost[loop_counter]
-        print("{0} = {1} $".format(item, price))
         total += price
+    
+    print("")
+    print("The total is {0} $.".format((total)))
+    tax = total * 0.15
+    plus_tax = tax + total
 
-    print("the total is {0} $.".format((total)))
-    plus_tax = total * 0.15
-    print("the total plus tax is {0} $.".format(plus_tax))
-    return
+    return plus_tax
 
 
 def main():
@@ -25,7 +27,6 @@ def main():
     # This function gets input
     food_item = []
     food_cost = []
-    times = 0
 
     # Input
     print("Enter grocery items.\n")
@@ -38,6 +39,7 @@ def main():
             food_cost.append(single_food_item_cost)
         else:
             tax = calculation(food_item, food_cost)
+            print("The total with + tax is {0} $.".format(tax))
             break
 
 
