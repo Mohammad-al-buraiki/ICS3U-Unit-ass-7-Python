@@ -2,18 +2,18 @@
 
 # Created by: Mohammad-al-buraiki
 # Created on January 2021
-# This program is to claculate the total of 
+# This program is to claculate the total of
 # items prices plus tax
 
 
 def calculation(food_item, food_cost):
     # here is the calculation
     total = 0
-    for loop_counter in range (len(food_item)):
+    for loop_counter in range(len(food_item)):
         item = food_item[loop_counter]
         price = food_cost[loop_counter]
         total += price
-    
+
     print("")
     print("The total is {0} $.".format((total)))
     tax = total * 0.15
@@ -39,7 +39,7 @@ def main():
             food_cost.append(single_food_item_cost)
         else:
             tax = calculation(food_item, food_cost)
-            print("The total with + tax is {0} $.".format(tax))
+            print("The total plus tax is {0:.2f} $.".format(tax))
             break
 
 
